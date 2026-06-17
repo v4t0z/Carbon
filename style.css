@@ -1,29 +1,38 @@
-/* Yumuşak tema geçişleri için global ayarlar */
+/* Clean and minimal global transitions */
 * {
-    transition-property: color, background-color, border-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
+  transition-property: color, background-color, border-color, space;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
-/* Scrollbar özelleştirmesi (Profesyonel görünüm için ince tasarlanmıştır) */
+/* Chill aesthetic custom scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 4px;
+  background: #2e2e2e;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+  background: #d4d4d4;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+  background: #a3a3a3;
+}
+
+/* Dynamic blog scroll progress bar overrides */
+#progress-bar {
+  background: #1c1c1c;
+}
+
+.dark #progress-bar {
+  background: #e5e5e5;
 }

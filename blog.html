@@ -1,59 +1,267 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | vatoz</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<!doctype html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vatoz | Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=1" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { darkBg: '#0f172a', darkCard: '#1e293b' } } } }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              chillDark: "#1c1c1c",
+              chillLight: "#e5e5e5",
+            },
+          },
+        },
+      };
     </script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-slate-50 text-slate-800 dark:bg-darkBg dark:text-slate-200 transition-colors duration-300 font-sans">
-
-    <div id="progress-container" class="fixed top-0 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 z-50">
-        <div id="progress-bar" class="h-full w-0 bg-gradient-to-r from-indigo-500 to-pink-500 transition-all duration-75"></div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-[#e5e5e5] text-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-[#e5e5e5] transition-colors duration-300 font-sans antialiased min-h-screen flex flex-col justify-between"
+  >
+    <div
+      class="fixed top-0 left-0 w-full h-1 z-50 bg-neutral-300 dark:bg-neutral-800"
+    >
+      <div
+        id="progress-bar"
+        class="h-full w-0 bg-[#1c1c1c] dark:bg-[#e5e5e5] transition-all duration-75"
+      ></div>
     </div>
 
-    <nav class="sticky top-1 z-40 backdrop-blur-md bg-white/75 dark:bg-darkBg/75 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">&larr; Ana Sayfa</a>
-            <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800">
-                <span id="theme-toggle-icon">🌙</span>
-            </button>
+    <nav
+      class="sticky top-0 z-40 backdrop-blur-md bg-[#e5e5e5]/75 dark:bg-[#1c1c1c]/75 border-b border-neutral-300 dark:border-neutral-800"
+    >
+      <div
+        class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="text-lg font-semibold tracking-tight text-[#1c1c1c] dark:text-[#e5e5e5]"
+          >vatoz.dev</a
+        >
+        <div class="flex items-center gap-6">
+          <a
+            href="index.html"
+            class="text-sm font-medium hover:opacity-60 transition"
+            >&larr; Geri Dön</a
+          >
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-all"
+          >
+            <span id="theme-toggle-icon">🌙</span>
+          </button>
         </div>
+      </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-4 py-12">
-        <article>
-            <header class="mb-8">
-                <span class="text-sm font-semibold text-indigo-500 uppercase">Veri Analitiği</span>
-                <h1 class="text-4xl font-extrabold my-3 text-slate-900 dark:text-white">Makine Öğrenmesinde Min-Max Normalizasyonu</h1>
-                <p class="text-slate-400 text-sm">Okuma Süresi: ~5 dk &bull; 17 Haziran 2026</p>
-            </header>
+    <main class="max-w-3xl mx-auto px-4 py-20 flex-grow">
+      <article class="space-y-8">
+        <header class="space-y-4">
+          <div
+            class="flex items-center gap-3 text-xs font-mono text-neutral-500"
+          >
+            <span>HAZİRAN 2026</span>
+            <span>•</span>
+            <span id="reading-time">HESAPLANIYOR...</span>
+          </div>
+          <h1
+            class="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white leading-tight"
+          >
+            Makine Öğrenmesinde Min-Max Normalizasyonu Neden Kritik?
+          </h1>
+          <div
+            class="h-px bg-neutral-300 dark:bg-neutral-800 w-full pt-2"
+          ></div>
+        </header>
 
-            <div class="prose dark:prose-invert max-w-none space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Veri madenciliği ve makine öğrenmesi süreçlerinde karşılaştığımız en büyük problemlerden biri, veri setindeki özelliklerin (features) farklı ölçeklerde olmasıdır. Örneğin bir ev fiyatı tahmin modelinde evin oda sayısı (1-5 arası) ile evin fiyatı (milyonlarca lira) aynı model matrisine girdiğinde algoritmalar büyük sayılara daha fazla ağırlık verme eğilimindedir.</p>
-                
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8">Matematiksel Formül Neyi İfade Ediyor?</h2>
-                <p>Min-Max normalizasyonu, verideki tüm değerleri başarılı bir şekilde 0 ile 1 arasına (veya istenirse -1 ile 1 arasına) çeker. Formülü oldukça basittir:</p>
-                
-                <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl text-center font-mono text-indigo-600 dark:text-indigo-400 my-4">
-                    X_norm = (X - X_min) / (X_max - X_min)
-                </div>
+        <div
+          class="text-base md:text-lg text-neutral-700 dark:text-neutral-300 font-light leading-relaxed space-y-6"
+        >
+          <p>
+            Veri bilimi ve makine öğrenmesi süreçlerinde karşılaştığımız en
+            büyük problemlerden biri, veri setindeki farklı özelliklerin
+            (features) birbirine göre çok farklı ölçeklerde olmasıdır. Örneğin,
+            bir ev fiyatı tahmin modelinde oda sayısı 1 ile 5 arasında
+            değişirken, evin metrekaresi 50 ile 500 arasında, fiyatı ise
+            milyonlar mertebesinde olabilir.
+          </p>
+          <p>
+            Bu durum, özellikle mesafe tabanlı algoritmaların (K-Means, KNN
+            gibi) veya gradyan inişi (Gradient Descent) kullanan yapay sinir
+            ağlarının büyük sayılara sahip özelliklere gereğinden fazla ağırlık
+            vermesine yol açar. Algoritma, küçük ölçekteki kritik verileri
+            tamamen göz ardı edebilir.
+          </p>
 
-                <p>Bu işlem yapıldığında, verinin orijinal dağılımı korunur ancak varyans küçülür. Özellikle mesafe tabanlı algoritmalar olan K-Nearest Neighbors (KNN) veya Support Vector Machines (SVM) gibi modellerde bu işlem hayati önem taşır. Eğer normalizasyon yapılmazsa, büyük eksendeki mesafeler modeli tamamen domine edecektir.</p>
+          <blockquote
+            class="p-5 my-6 rounded-xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-neutral-300 dark:border-neutral-800 text-sm font-mono text-neutral-600 dark:text-neutral-400 leading-relaxed"
+          >
+            Min-Max Normalizasyonu, ham verileri doğrusal bir dönüşümle tam
+            olarak 0 ile 1 (veya -1 ile 1) arasına sıkıştırarak tüm özelliklerin
+            eğitim sürecine eşit şartlar altında katılmasını sağlar.
+          </blockquote>
 
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8">Hangi Durumlarda Tercih Edilmemeli?</h2>
-                <p>Eğer veri setinizde çok fazla uç değer (outlier) varsa, Min-Max normalizasyonu tehlikeli olabilir. Çünkü formül doğrudan maksimum ve minimum değerlere bağlıdır. Tek bir devasa uç değer, geri kalan tüm mantıklı verilerin çok dar bir aralığa sıkışmasına neden olur. Bu durumlarda Standart Sapma ve Ortalama kullanan <strong>StandardScaler</strong> yöntemini seçmek profesyonel bir yaklaşım olacaktır.</p>
-                
-                <p>Sonuç olarak, veri ön işleme aşaması bir modelin başarısını belirleyen en önemli adımdır. Çöp girerse çöp çıkar (Garbage in, garbage out) prensibiyle, verilerimizi modele vermeden önce ölçeklemek, kararlı ve doğru sonuçlar almamızı sağlar.</p>
-            </div>
-        </article>
+          <p>
+            Matematiksel olarak formül oldukça basittir: Her bir veri değerinden
+            o sütunun minimum değeri çıkarılır ve sonuç, maksimum ile minimum
+            değer arasındaki farka bölünür. Bu işlem veri setindeki varyansı
+            korur ancak mutlak büyüklüklerin yarattığı yapay baskıyı tamamen
+            ortadan kaldırır.
+          </p>
+          <p>
+            Sonuç olarak, model daha kararlı yakınsar, eğitim süreleri kısalır
+            ve metrikleriniz çok daha tutarlı sonuçlar üretmeye başlar. Bu
+            yüzden veri önişleme (preprocessing) aşamasında bu adımı doğru
+            kurgulamak, projenin başarısı için doğrudan hayati önem
+            taşımaktadır.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ut
+            perspiciatis quo nulla harum amet quos atque nemo animi, libero
+            mollitia aliquam veritatis iusto autem ex architecto dolor corporis,
+            facere fugiat sapiente assumenda quibusdam consequuntur! Velit,
+            officiis? Eaque tempore quaerat totam, vel saepe sed. Perferendis
+            ipsum quos nisi consequatur voluptate similique. Eius, tempora
+            impedit expedita minima cupiditate quibusdam quas quos! Aut repellat
+            aspernatur adipisci ipsa itaque, labore minima a voluptas vel est
+            perspiciatis magni impedit ut facere error earum tenetur, fuga
+            maxime cumque quis. Necessitatibus architecto fugiat quo magni
+            beatae? Laudantium blanditiis eius hic atque ex possimus aliquid
+            nihil quaerat iste sapiente odio voluptate maxime, libero
+            voluptatibus culpa earum doloribus! Voluptatem tempore enim
+            reiciendis quam odit eum neque? At illum ea et natus cumque, rerum
+            dolores animi nulla saepe velit fuga fugiat dignissimos excepturi
+            atque. Laudantium, unde quas sequi architecto eius quos, placeat
+            autem perspiciatis recusandae dolorum omnis. Ex, eligendi culpa
+            doloribus quia illum soluta labore? Neque nostrum rerum aliquid
+            facilis autem amet labore iure placeat blanditiis earum molestiae
+            libero laboriosam minus repudiandae, sit aut aspernatur quae eius.
+            Sapiente incidunt tempore temporibus non quo ducimus tempora
+            blanditiis quis aspernatur exercitationem, commodi sint facere
+            suscipit praesentium molestiae vero minima ratione laborum pariatur
+            reprehenderit, ipsam fugiat consectetur nobis? Enim eius qui aut
+            molestias, consequuntur, aliquid ea, atque alias distinctio
+            laudantium quasi debitis vitae! A id distinctio sunt fugit. Delectus
+            adipisci deserunt pariatur ab voluptatum dolores quibusdam molestiae
+            voluptates eum nulla iure accusantium maiores id ut eaque iste
+            quaerat, aspernatur excepturi fugiat tempore ducimus quod nam illum!
+            Saepe incidunt adipisci deserunt illo unde sequi veniam provident
+            accusantium quidem, nostrum nobis eligendi, id quis praesentium
+            porro exercitationem reprehenderit libero delectus! Earum saepe
+            incidunt dolores totam ullam laboriosam, odio consectetur. Quam,
+            iste? Asperiores amet alias minus, cupiditate error rerum
+            repudiandae eaque iusto tenetur. Earum a animi praesentium
+            consequatur magni pariatur adipisci voluptatem illo aliquid
+            necessitatibus soluta, dicta excepturi maxime beatae, temporibus
+            quis quam doloremque incidunt rem et. Vero, neque. Numquam libero
+            quibusdam aspernatur inventore molestias voluptatem unde
+            voluptatibus animi harum recusandae? Numquam neque quo sit quis
+            temporibus placeat obcaecati possimus magnam nihil, illo aliquid, et
+            exercitationem a sapiente totam voluptatum, molestiae earum. Ut
+            repellendus sequi minus provident, ab totam, vero vitae perspiciatis
+            architecto itaque modi dolor molestias. Fugiat facilis distinctio
+            labore nobis quidem! Inventore totam velit voluptatem voluptatibus
+            dolorem molestiae quam rerum corrupti sit soluta sunt natus qui
+            perferendis accusamus, vero, reiciendis at. Aperiam nobis, enim
+            tenetur asperiores aut vero explicabo omnis officia, ducimus, itaque
+            assumenda totam obcaecati amet in? Obcaecati voluptates, facere nisi
+            pariatur laborum accusantium veritatis odit vel iste adipisci ipsum.
+            Tempora libero nesciunt perferendis repudiandae veniam unde
+            accusamus quaerat incidunt, necessitatibus, fugit obcaecati error,
+            temporibus illo facere eius dolores. Eveniet iste natus dolorem
+            nihil esse doloribus ab consequatur asperiores, quibusdam nisi eius
+            soluta deleniti fugit amet ipsa omnis magnam saepe aut ad
+            laboriosam. Qui fuga eius molestiae incidunt cumque a veritatis rem
+            quisquam saepe nemo maiores, in, accusantium quia officia quasi
+            rerum at nesciunt labore atque ab? Repellendus velit rem explicabo,
+            tempora in, ullam assumenda ut libero placeat deleniti aliquid
+            accusantium nostrum doloribus vitae! Ipsam facilis id rem iste a
+            harum distinctio hic adipisci numquam magnam quasi consequuntur
+            dolorum nobis cum laboriosam, aut doloremque tempora veniam nihil
+            exercitationem nisi quibusdam eligendi. Illo ipsa unde impedit esse
+            ipsum cumque laudantium temporibus, nihil, consequuntur eius
+            voluptate. Voluptatem, exercitationem. Corporis doloremque deleniti
+            voluptates, quae distinctio non sint officia ut minima cum fugiat,
+            repudiandae incidunt rerum provident odio accusantium reprehenderit
+            iusto magni eligendi molestias. Maiores eum quisquam dolore! Placeat
+            harum obcaecati animi error blanditiis temporibus accusantium
+            dolorem minima fugit accusamus, eligendi sunt beatae eaque odio quos
+            quas ex, alias mollitia hic quia voluptate! A minima nostrum esse
+            eveniet quae totam doloremque reiciendis ea, culpa eligendi vel
+            asperiores facere molestiae commodi beatae unde odit officiis qui
+            cupiditate? Necessitatibus esse dignissimos praesentium ea quaerat
+            delectus velit nesciunt natus voluptates, optio, unde error sequi
+            adipisci quasi tempora! Enim, modi facere nemo et nisi animi
+            officia. Odit impedit in itaque deserunt. Similique odio culpa, quis
+            obcaecati eum ipsa, magnam ut beatae animi qui dolorum, mollitia
+            unde. Nulla, accusamus architecto non maxime pariatur velit rerum?
+            Rerum vitae cum tempore id beatae assumenda. Consequatur sequi
+            voluptates dicta veniam debitis placeat expedita quos assumenda
+            tenetur reprehenderit obcaecati, perferendis ipsam eligendi.
+            Voluptates nam totam, corrupti quos consequatur fugiat et, adipisci
+            necessitatibus, ratione numquam earum repudiandae voluptate labore
+            error distinctio vitae saepe? Ducimus labore, distinctio repudiandae
+            sint, amet a eius nam, officiis incidunt cumque quidem ab atque odit
+            numquam architecto cum suscipit? Voluptatum necessitatibus minima
+            animi dignissimos, error totam dolores, doloribus beatae illo
+            distinctio ullam ad blanditiis delectus quae non itaque? Minima
+            harum accusantium accusamus eveniet animi deserunt fugiat, suscipit
+            numquam delectus blanditiis placeat, nemo quod distinctio amet
+            perferendis consequuntur ipsam alias architecto ea voluptas? Sunt,
+            repellat doloribus? Dolores ex consequatur illo quibusdam sed,
+            facilis necessitatibus sunt corporis aut molestiae tempore
+            praesentium quidem, mollitia aspernatur nulla. Enim architecto alias
+            ipsam placeat, nam numquam veritatis aperiam, dicta, corrupti
+            sapiente ut facilis id. At error, obcaecati ducimus ex similique est
+            unde quisquam quia doloribus dicta autem nisi. Nisi placeat vero
+            debitis rem quia odit voluptate, ea aperiam, aliquam cumque vitae
+            dolor omnis explicabo delectus blanditiis fugit corrupti nihil
+            obcaecati odio possimus magnam atque dolorem? Tenetur culpa
+            molestias quae maxime eligendi praesentium vero facere sunt nemo
+            beatae! Accusamus aspernatur, quo nisi culpa quisquam est
+            consequuntur similique reprehenderit vero fugiat, natus magni
+            inventore optio vel officiis? Accusantium quae vitae pariatur
+            tempore iste blanditiis, facere id deserunt, eveniet atque sint
+            aspernatur veniam officiis rerum inventore sunt. Assumenda expedita,
+            laborum aliquam cumque laudantium autem eaque accusamus mollitia
+            quisquam quibusdam modi facilis fugit id perferendis quaerat nostrum
+            eius officiis ut officia, quasi doloribus excepturi? Amet aut autem,
+            recusandae temporibus blanditiis velit quibusdam adipisci quas
+            itaque nemo totam odio deleniti! Ad, necessitatibus ipsum. Magnam,
+            deserunt nulla similique voluptates earum quis eligendi dicta
+            reprehenderit facere sunt ipsam, perspiciatis fugit molestiae labore
+            tempore in, et beatae iusto illum enim porro est minus corrupti.
+            Sunt iure commodi blanditiis quis! Dolores corporis quaerat non
+            deserunt, id velit!
+          </p>
+        </div>
+      </article>
     </main>
 
+    <footer
+      class="bg-neutral-200/50 dark:bg-neutral-900/60 border-t border-neutral-300 dark:border-neutral-800 py-12"
+    >
+      <div
+        class="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-neutral-400"
+      >
+        <div>&copy; 2026 vatoz. Tüm hakları saklıdır.</div>
+        <a
+          href="https://github.com/v4t0z"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-neutral-900 dark:hover:text-neutral-100 transition"
+          >GITHUB // V4T0Z &rarr;</a
+        >
+      </div>
+    </footer>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

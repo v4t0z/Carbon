@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vatoz | Kişisel Portfolyo</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico?v=1" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      // Sayfa yüklenmeden önce temanın parlamasını önlemek için optimize Tailwind konfigürasyonu
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              darkBg: "#0f172a",
-              darkCard: "#1e293b",
+              chillDark: "#1c1c1c",
+              chillLight: "#e5e5e5",
             },
           },
         },
@@ -23,33 +22,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body
-    class="bg-slate-50 text-slate-800 dark:bg-darkBg dark:text-slate-200 transition-colors duration-300 font-sans"
+    class="bg-[#e5e5e5] text-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-[#e5e5e5] transition-colors duration-300 font-sans antialiased"
   >
     <nav
-      class="sticky top-0 z-50 backdrop-blur-md bg-white/75 dark:bg-darkBg/75 border-b border-slate-200 dark:border-slate-800"
+      class="sticky top-0 z-50 backdrop-blur-md bg-[#e5e5e5]/75 dark:bg-[#1c1c1c]/75 border-b border-neutral-300 dark:border-neutral-800"
     >
       <div
         class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"
       >
         <a
           href="index.html"
-          class="text-xl font-bold tracking-wider text-indigo-600 dark:text-indigo-400"
+          class="text-lg font-semibold tracking-tight text-[#1c1c1c] dark:text-[#e5e5e5]"
           >vatoz.dev</a
         >
 
         <div class="flex items-center gap-6">
-          <div class="hidden md:flex gap-6 font-medium">
-            <a href="#projects" class="hover:text-indigo-500 transition"
-              >Projeler</a
-            >
-            <a href="#blog" class="hover:text-indigo-500 transition">Blog</a>
-            <a href="#contact" class="hover:text-indigo-500 transition"
-              >İletişim</a
-            >
+          <div class="hidden md:flex gap-6 text-sm font-medium">
+            <a href="#projects" class="hover:opacity-60 transition">Projeler</a>
+            <a href="#blog" class="hover:opacity-60 transition">Blog</a>
+            <a href="#contact" class="hover:opacity-60 transition">İletişim</a>
           </div>
           <button
             id="theme-toggle"
-            class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:scale-105 transition-all"
+            class="p-2 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-all"
           >
             <span id="theme-toggle-icon">🌙</span>
           </button>
@@ -57,39 +52,42 @@
       </div>
     </nav>
 
-    <!-- Hero / Giriş Alanı + Yapım Aşaması İndikatörü -->
     <header
-      class="max-w-4xl mx-auto px-4 py-20 text-center relative flex flex-col items-center"
+      class="max-w-4xl mx-auto px-4 py-24 text-center relative flex flex-col items-center"
     >
-      <!-- ESKİ SARI ALANIN YERİNE GELENE NEON MOR KOD: -->
+      <!-- Under construction indicator with minimal aesthetic -->
       <div
-        class="inline-flex flex-col items-center gap-3 p-6 rounded-2xl bg-slate-900/90 border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.15)] mb-8 max-w-md mx-auto"
+        class="inline-flex flex-col items-center gap-2 p-5 rounded-xl bg-neutral-200/50 dark:bg-neutral-900/50 border border-neutral-300 dark:border-neutral-800 mb-10 max-w-sm mx-auto"
       >
-        <div class="flex items-center gap-3">
-          <span class="relative flex h-3 w-3">
+        <div class="flex items-center gap-2.5">
+          <span class="relative flex h-2 w-2">
             <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75 shadow-[0_0_10px_#a855f7]"
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neutral-400 dark:bg-neutral-500 opacity-75"
             ></span>
             <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-purple-600 shadow-[0_0_8px_#a855f7]"
+              class="relative inline-flex rounded-full h-2 w-2 bg-neutral-500 dark:bg-neutral-400"
             ></span>
           </span>
           <span
-            class="text-sm font-mono tracking-widest uppercase text-purple-400 font-bold drop-shadow-[0_0_6px_rgba(168,85,247,0.5)]"
+            class="text-xs font-mono tracking-wider uppercase text-neutral-600 dark:text-neutral-400 font-medium"
           >
-            Sistem Yenileniyor & Yapım Aşamasında
+            System Maintenance // Building
           </span>
         </div>
+        <p
+          class="text-[11px] text-neutral-500 dark:text-neutral-500 font-mono text-center border-t border-neutral-300 dark:border-neutral-800 pt-1.5 mt-0.5"
+        >
+          Portfolio framework is being optimized with a minimalist layout.
+        </p>
       </div>
-      <!-- NEON MOR KODUN BİTTİĞİ YER -->
 
       <h1
-        class="text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6"
+        class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6"
       >
         Merhaba, Ben vatoz
       </h1>
       <p
-        class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+        class="text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-light"
       >
         Veri bilimi, makine öğrenmesi ve modern yazılım çözümleri üzerine
         çalışan bir geliştiriciyim. Projelerimi ve teknik yazılarımı burada
@@ -99,93 +97,142 @@
 
     <section
       id="projects"
-      class="max-w-6xl mx-auto px-4 py-16 border-t border-slate-200 dark:border-slate-800"
+      class="max-w-5xl mx-auto px-4 py-16 border-t border-neutral-300 dark:border-neutral-800 overflow-hidden"
     >
-      <h2 class="text-3xl font-bold mb-10 text-slate-900 dark:text-white">
+      <h2
+        class="text-2xl font-semibold mb-12 tracking-tight text-neutral-900 dark:text-white text-center"
+      >
         Öne Çıkan Projeler
       </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div
-          class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition"
-        >
-          <div
-            class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold"
-          >
-            [Makine Öğrenmesi Projesi Görseli]
-          </div>
-          <div class="p-6">
-            <span
-              class="text-xs font-semibold uppercase tracking-wider text-indigo-500"
-              >Python & Data Science</span
-            >
-            <h3 class="text-xl font-bold mt-2 mb-3">
-              Müşteri Segmentasyonu Analizi
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
-              K-Means kümeleme algoritması kullanılarak kullanıcı
-              davranışlarının optimize edilmesi projesi.
-            </p>
-            <a
-              href="#"
-              class="text-indigo-500 hover:text-indigo-600 font-medium text-sm inline-flex items-center gap-1"
-              >İncele &rarr;</a
-            >
-          </div>
-        </div>
 
+      <div
+        class="relative h-[420px] w-full flex items-center justify-center perspective-[1000px]"
+      >
         <div
-          class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition"
+          id="projects-track"
+          class="relative w-full max-w-md h-full flex items-center justify-center"
         >
           <div
-            class="h-48 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white font-bold"
+            class="absolute w-full p-6 rounded-2xl border bg-neutral-100/70 dark:bg-neutral-900/40 border-neutral-300 dark:border-neutral-800 backdrop-blur-md shadow-sm transition-all duration-700 ease-out flex flex-col justify-between min-h-[380px] select-none"
           >
-            [Flutter Mobil Uygulama Görseli]
+            <div>
+              <div
+                class="h-40 bg-neutral-200 dark:bg-neutral-900 rounded-lg border border-neutral-300 dark:border-neutral-800 mb-4"
+              ></div>
+              <span
+                class="text-xs font-mono uppercase tracking-wider text-neutral-500"
+                >Python & Data Science</span
+              >
+              <h3 class="text-lg font-medium mt-1 mb-2">
+                Müşteri Segmentasyonu Analizi
+              </h3>
+              <p
+                class="text-neutral-600 dark:text-neutral-400 text-sm font-light leading-relaxed"
+              >
+                K-Means kümeleme algoritması kullanılarak kullanıcı
+                davranışlarının optimize edilmesi projesi.
+              </p>
+            </div>
+            <div class="mt-4">
+              <a
+                href="projects/proje-1.html"
+                class="text-sm font-medium underline underline-offset-4 hover:opacity-60 transition"
+                >Projeyi İncele &rarr;</a
+              >
+            </div>
           </div>
-          <div class="p-6">
-            <span
-              class="text-xs font-semibold uppercase tracking-wider text-pink-500"
-              >Flutter & Dart</span
-            >
-            <h3 class="text-xl font-bold mt-2 mb-3">
-              Dinamik Animasyon Arayüzü
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
-              Özel animasyon kontrolcüleri ve akıcı geçiş efektlerine sahip
-              modern bir mobil arayüz çalışması.
-            </p>
-            <a
-              href="#"
-              class="text-pink-500 hover:text-pink-600 font-medium text-sm inline-flex items-center gap-1"
-              >İncele &rarr;</a
-            >
+
+          <div
+            class="absolute w-full p-6 rounded-2xl border bg-neutral-100/70 dark:bg-neutral-900/40 border-neutral-300 dark:border-neutral-800 backdrop-blur-md shadow-sm transition-all duration-700 ease-out flex flex-col justify-between min-h-[380px] select-none"
+          >
+            <div>
+              <div
+                class="h-40 bg-neutral-200 dark:bg-neutral-900 rounded-lg border border-neutral-300 dark:border-neutral-800 mb-4"
+              ></div>
+              <span
+                class="text-xs font-mono uppercase tracking-wider text-neutral-500"
+                >Flutter & Dart</span
+              >
+              <h3 class="text-lg font-medium mt-1 mb-2">
+                Dinamik Animasyon Arayüzü
+              </h3>
+              <p
+                class="text-neutral-600 dark:text-neutral-400 text-sm font-light leading-relaxed"
+              >
+                Özel animasyon kontrolcüleri ve akıcı geçiş efektlerine sahip
+                modern bir mobil arayüz çalışması.
+              </p>
+            </div>
+            <div class="mt-4">
+              <a
+                href="projects/proje-2.html"
+                class="text-sm font-medium underline underline-offset-4 hover:opacity-60 transition"
+                >Projeyi İncele &rarr;</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="absolute w-full p-6 rounded-2xl border bg-neutral-100/70 dark:bg-neutral-900/40 border-neutral-300 dark:border-neutral-800 backdrop-blur-md shadow-sm transition-all duration-700 ease-out flex flex-col justify-between min-h-[380px] select-none"
+          >
+            <div>
+              <div
+                class="h-40 bg-neutral-200 dark:bg-neutral-900 rounded-lg border border-neutral-300 dark:border-neutral-800 mb-4"
+              ></div>
+              <span
+                class="text-xs font-mono uppercase tracking-wider text-neutral-500"
+                >Game Theory & AI</span
+              >
+              <h3 class="text-lg font-medium mt-1 mb-2">
+                Nash Dengesi Simülatörü
+              </h3>
+              <p
+                class="text-neutral-600 dark:text-neutral-400 text-sm font-light leading-relaxed"
+              >
+                Çok oyunculu senaryolarda optimum stratejileri hesaplayan ve
+                karar mekanizmalarını görselleştiren simülasyon.
+              </p>
+            </div>
+            <div class="mt-4">
+              <a
+                href="projects/proje-3.html"
+                class="text-sm font-medium underline underline-offset-4 hover:opacity-60 transition"
+                >Projeyi İncele &rarr;</a
+              >
+            </div>
           </div>
         </div>
       </div>
+
+      <div id="projects-bars" class="flex justify-center gap-3 mt-4"></div>
     </section>
 
     <section
       id="blog"
-      class="max-w-4xl mx-auto px-4 py-16 border-t border-slate-200 dark:border-slate-800"
+      class="max-w-4xl mx-auto px-4 py-16 border-t border-neutral-300 dark:border-neutral-800"
     >
-      <h2 class="text-3xl font-bold mb-10 text-slate-900 dark:text-white">
+      <h2
+        class="text-2xl font-semibold mb-10 tracking-tight text-neutral-900 dark:text-white"
+      >
         Son Yazılarım
       </h2>
-      <div class="space-y-6">
+      <div class="space-y-4">
         <a
           href="blog.html"
-          class="block group p-6 bg-white dark:bg-darkCard rounded-xl border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition"
+          class="block p-6 bg-neutral-100 dark:bg-neutral-900/40 rounded-xl border border-neutral-300 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-700 transition duration-300"
         >
           <div class="flex justify-between items-start mb-2">
-            <h3
-              class="text-xl font-bold group-hover:text-indigo-500 transition"
-            >
+            <h3 class="text-lg font-medium text-neutral-900 dark:text-white">
               Makine Öğrenmesinde Min-Max Normalizasyonu Neden Kritik?
             </h3>
-            <span class="text-sm text-slate-400 whitespace-nowrap ml-4"
+            <span
+              class="text-xs font-mono text-neutral-400 whitespace-nowrap ml-4"
               >Haziran 2026</span
             >
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">
+          <p
+            class="text-neutral-600 dark:text-neutral-400 text-sm font-light line-clamp-2 leading-relaxed"
+          >
             Algoritmaların veri setindeki büyük sayılara odaklanıp sapmasını
             engellemek adına veriyi 0 ile 1 arasına sıkıştırmanın matematiksel
             arka planı...
@@ -196,55 +243,92 @@
 
     <footer
       id="contact"
-      class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-16 mt-20"
+      class="bg-neutral-200/50 dark:bg-neutral-900/60 border-t border-neutral-300 dark:border-neutral-800 py-16 mt-24"
     >
       <div class="max-w-4xl mx-auto px-4">
         <h2
-          class="text-3xl font-bold mb-4 text-center text-slate-900 dark:text-white"
+          class="text-2xl font-semibold mb-3 text-center tracking-tight text-neutral-900 dark:text-white"
         >
           Bana Ulaşın
         </h2>
-        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">
-          Projeler, iş birlikleri veya sadece kahve eşliğinde teknik sohbetler
-          için mesaj atabilirsiniz.
+        <p
+          class="text-center text-sm text-neutral-600 dark:text-neutral-400 mb-10 font-light"
+        >
+          Projeler, iş birlikleri veya teknik sohbetler için mesaj
+          atabilirsiniz.
         </p>
 
-        <form class="max-w-md mx-auto space-y-4">
+        <form class="max-w-md mx-auto space-y-5">
           <div>
-            <label class="block text-sm font-medium mb-1">Adınız</label>
+            <label
+              class="block text-xs font-mono tracking-wider uppercase mb-1.5 text-neutral-500"
+              >Adınız</label
+            >
             <input
               type="text"
-              class="w-full px-4 py-2 rounded-lg border bg-white dark:bg-darkBg border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="John Doe"
+              class="w-full px-4 py-2.5 text-sm rounded-lg border bg-neutral-50 dark:bg-neutral-900 border-neutral-300 dark:border-neutral-800 focus:outline-none focus:border-neutral-500 dark:focus:border-neutral-600 transition"
+              placeholder="isminiz nedir?"
             />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1"
+            <label
+              class="block text-xs font-mono tracking-wider uppercase mb-1.5 text-neutral-500"
               >E-posta Adresiniz</label
             >
             <input
               type="email"
-              class="w-full px-4 py-2 rounded-lg border bg-white dark:bg-darkBg border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="john@example.com"
+              class="w-full px-4 py-2.5 text-sm rounded-lg border bg-neutral-50 dark:bg-neutral-900 border-neutral-300 dark:border-neutral-800 focus:outline-none focus:border-neutral-500 dark:focus:border-neutral-600 transition"
+              placeholder="size nereden ulaşabilirim?"
             />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1">Mesajınız</label>
+            <label
+              class="block text-xs font-mono tracking-wider uppercase mb-1.5 text-neutral-500"
+              >Mesajınız</label
+            >
             <textarea
               rows="4"
-              class="w-full px-4 py-2 rounded-lg border bg-white dark:bg-darkBg border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Mesajınızı buraya yazın..."
+              class="w-full px-4 py-2.5 text-sm rounded-lg border bg-neutral-50 dark:bg-neutral-900 border-neutral-300 dark:border-neutral-800 focus:outline-none focus:border-neutral-500 dark:focus:border-neutral-600 transition"
+              placeholder="mesajınızı buraya yazın..."
             ></textarea>
           </div>
           <button
             type="submit"
-            class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-sm transition"
+            class="w-full py-3 bg-[#1c1c1c] dark:bg-[#e5e5e5] text-[#e5e5e5] dark:text-[#1c1c1c] text-sm font-medium rounded-lg hover:opacity-80 transition duration-300"
           >
             Gönder
           </button>
         </form>
 
-        <div class="text-center text-xs text-slate-400 mt-12">
+        <!-- Minimalist GitHub Link Section -->
+        <div class="flex justify-center mt-10">
+          <a
+            href="https://github.com/v4t0z"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-xs font-mono tracking-wider text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition duration-300 group"
+          >
+            <!-- Simple SVG GitHub Icon -->
+            <svg
+              class="w-4 h-4 fill-current"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.061.069-.061 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>Github</span>
+            <span
+              class="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300"
+              >&rarr;</span
+            >
+          </a>
+        </div>
+
+        <div class="text-center text-[11px] font-mono text-neutral-400 mt-12">
           &copy; 2026 vatoz. Tüm hakları saklıdır.
         </div>
       </div>
