@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vatoz | Hesap Makinesi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: { colors: { chillDark: "#1c1c1c", chillLight: "#e5e5e5" } },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-[#e5e5e5] text-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-[#e5e5e5] transition-colors duration-300 font-sans antialiased min-h-screen flex flex-col justify-between"
+  >
+    <div
+      class="fixed top-0 left-0 w-full h-1 z-50 bg-neutral-300 dark:bg-neutral-800"
+    >
+      <div
+        id="progress-bar"
+        class="h-full w-0 bg-indigo-600 dark:bg-indigo-400 transition-all duration-75"
+      ></div>
+    </div>
+
+    <nav
+      class="sticky top-0 z-40 backdrop-blur-md bg-[#e5e5e5]/75 dark:bg-[#1c1c1c]/75 border-b border-neutral-300 dark:border-neutral-800"
+    >
+      <div
+        class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between"
+      >
+        <a
+          href="../index.html"
+          class="text-sm font-medium hover:opacity-60 transition"
+          >&larr; Projelere Dön</a
+        >
+      </div>
+    </nav>
+
+    <main class="max-w-2xl mx-auto px-4 py-16 flex-grow space-y-10">
+      <header class="space-y-3">
+        <div class="flex items-center gap-3 text-xs font-mono text-neutral-500">
+          <span>MART 2026</span>
+          <span>•</span>
+          <span id="reading-time">HESAPLANIYOR...</span>
+        </div>
+        <h1 class="text-3xl font-bold tracking-tight">
+          Kapsamlı Hesap Makinesi
+        </h1>
+        <p class="text-neutral-500 font-light">
+          Yazılım mantığını ve mantıksal operatörleri kavramak için
+          geliştirdiğim ilk proje.
+        </p>
+        <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-full pt-2"></div>
+      </header>
+
+      <section class="space-y-4 font-light leading-relaxed">
+        <h2 class="text-lg font-semibold font-mono tracking-tight">nedir?</h2>
+        <p>
+          Sadece dört işlem yapmakla kalmayan; işlem geçmişini hafızada tutan,
+          sıfıra bölünme gibi matematiksel hataları yakalayan ve ardışık
+          işlemleri pürüzsüz yöneten CLI (komut satırı) tabanlı bir araçtır.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold font-mono tracking-tight">
+          öne çıkan özellik // eval emülasyonu
+        </h2>
+        <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
+          Girdileri tehlikeli olan hazır `eval()` fonksiyonu yerine, regex
+          kullanarak güvenli bir şekilde ayrıştıran algoritma mimarisi:
+        </p>
+
+        <div
+          class="rounded-lg overflow-hidden border border-neutral-300 dark:border-neutral-800 font-mono text-xs"
+        >
+          <div
+            class="bg-neutral-200 dark:bg-neutral-900 px-4 py-2 text-neutral-500 flex justify-between items-center border-b border-neutral-300 dark:border-neutral-800"
+          >
+            <span>python // safe_calc.py</span>
+            <span
+              class="text-emerald-500 text-[10px] tracking-widest uppercase font-bold"
+              >● active</span
+            >
+          </div>
+          <div
+            class="p-4 bg-neutral-100 dark:bg-neutral-950 text-neutral-700 dark:text-neutral-300 space-y-2 overflow-x-auto"
+          >
+            <div>
+              <span class="text-indigo-500 dark:text-indigo-400">import</span>
+              re
+            </div>
+            <br />
+            <div>
+              <span class="text-neutral-400"
+                ># girdiyi temizle ve güvenli şekilde parse et</span
+              >
+            </div>
+            <div>
+              def
+              <span class="text-blue-500">parse_expression</span>(user_input):
+            </div>
+            <div class="pl-4">
+              tokens = re.findall(<span class="text-amber-600"
+                >r'\d+\.?\d*|[\+\-\*/]'</span
+              >, user_input)
+            </div>
+            <div class="pl-4">
+              <span class="text-indigo-500 dark:text-indigo-400">return</span>
+              tokens
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2
+          class="text-lg font-semibold font-mono tracking-tight text-indigo-600 dark:text-indigo-400"
+        >
+          bana kazandırdıkları
+        </h2>
+        <ul class="space-y-2 text-sm font-light list-inside list-disc">
+          <li>
+            Koşullu durumların (`if-else`) karmaşık senaryolarda nasıl
+            yönetileceğini öğrendim.
+          </li>
+          <li>
+            Kullanıcı hatalı girdi verdiğinde uygulamanın çökmesini engelleyen
+            `try-except` mekanizmasını kavradım.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="../script.js"></script>
+  </body>
+</html>

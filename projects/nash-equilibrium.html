@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="tr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vatoz | Nash Dengesi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: { colors: { chillDark: "#1c1c1c", chillLight: "#e5e5e5" } },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-[#e5e5e5] text-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-[#e5e5e5] transition-colors duration-300 font-sans antialiased min-h-screen flex flex-col justify-between"
+  >
+    <div
+      class="fixed top-0 left-0 w-full h-1 z-50 bg-neutral-300 dark:bg-neutral-800"
+    >
+      <div
+        id="progress-bar"
+        class="h-full w-0 bg-indigo-600 dark:bg-indigo-400 transition-all duration-75"
+      ></div>
+    </div>
+
+    <nav
+      class="sticky top-0 z-40 backdrop-blur-md bg-[#e5e5e5]/75 dark:bg-[#1c1c1c]/75 border-b border-neutral-300 dark:border-neutral-800"
+    >
+      <div
+        class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between"
+      >
+        <a
+          href="../index.html"
+          class="text-sm font-medium hover:opacity-60 transition"
+          >&larr; Ana Sayfa</a
+        >
+      </div>
+    </nav>
+
+    <main class="max-w-2xl mx-auto px-4 py-16 flex-grow space-y-10">
+      <header class="space-y-3">
+        <div class="flex items-center gap-3 text-xs font-mono text-neutral-500">
+          <span>HAZİRAN 2026</span>
+          <span>•</span>
+          <span id="reading-time">HESAPLANIYOR...</span>
+        </div>
+        <h1 class="text-3xl font-bold tracking-tight">
+          Oyun Teorisi: Nash Dengesi Çözücü
+        </h1>
+        <p class="text-neutral-500 font-light">
+          Stratejik karar alma mekanizmalarının matematiksel simülasyonu.
+        </p>
+        <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-full pt-2"></div>
+      </header>
+
+      <section class="space-y-4 font-light leading-relaxed">
+        <h2 class="text-lg font-semibold font-mono tracking-tight">nedir?</h2>
+        <p>
+          Çok oyunculu senaryolarda (örneğin rakip iki şirketin fiyat
+          politikaları veya mahkumlar ikilemi), oyuncuların diğerlerinin
+          stratejilerini bilerek kendi hamlelerini optimize ettiği o kararlı
+          "denge" noktasını bulan matematiksel bir motordur.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-semibold font-mono tracking-tight">
+          öne çıkan özellik // saf strateji tarama
+        </h2>
+        <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
+          Matris içerisindeki tüm olası hamle kombinasyonlarını çapraz
+          sorgulayarak baskın stratejileri (Dominant Strategies) ayıklayan saf
+          döngü mimarisi:
+        </p>
+
+        <div
+          class="rounded-lg overflow-hidden border border-neutral-300 dark:border-neutral-800 font-mono text-xs"
+        >
+          <div
+            class="bg-neutral-200 dark:bg-neutral-900 px-4 py-2 text-neutral-500 flex justify-between items-center border-b border-neutral-300 dark:border-neutral-800"
+          >
+            <span>python // nash_solver.py</span>
+            <span
+              class="text-emerald-500 text-[10px] tracking-widest uppercase font-bold"
+              >● active</span
+            >
+          </div>
+          <div
+            class="p-4 bg-neutral-100 dark:bg-neutral-950 text-neutral-700 dark:text-neutral-300 space-y-2 overflow-x-auto"
+          >
+            <div>
+              <span class="text-indigo-500 dark:text-indigo-400">import</span>
+              nashpy
+              <span class="text-indigo-500 dark:text-indigo-400">as</span> nash
+            </div>
+            <div>
+              <span class="text-indigo-500 dark:text-indigo-400">import</span>
+              numpy
+              <span class="text-indigo-500 dark:text-indigo-400">as</span> np
+            </div>
+            <br />
+            <div>
+              <span class="text-neutral-400"
+                ># oyuncu getiri matrislerini tanımla ve çöz</span
+              >
+            </div>
+            <div>
+              A = np.array([[<span class="text-amber-600">3</span>,
+              <span class="text-amber-600">0</span>], [<span
+                class="text-amber-600"
+                >5</span
+              >, <span class="text-amber-600">1</span>]])
+            </div>
+            <div>
+              B = np.array([[<span class="text-amber-600">3</span>,
+              <span class="text-amber-600">5</span>], [<span
+                class="text-amber-600"
+                >0</span
+              >, <span class="text-amber-600">1</span>]])
+            </div>
+            <div>game = nash.Game(A, B)</div>
+            <div>equilibria = game.support_enumeration()</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-3">
+        <h2
+          class="text-lg font-semibold font-mono tracking-tight text-indigo-600 dark:text-indigo-400"
+        >
+          bana kazandırdıkları
+        </h2>
+        <ul class="space-y-2 text-sm font-light list-inside list-disc">
+          <li>
+            Oyun teorisinin ve beklenen parasal değer (EMV) analizlerinin
+            algoritmik sistemlere nasıl entegre edileceğini çözdüm.
+          </li>
+          <li>
+            Optimizasyon problemlerini lineer cebir ve matris dönüşümleri
+            kullanarak koda dökmeyi öğrendim.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="../script.js"></script>
+  </body>
+</html>
