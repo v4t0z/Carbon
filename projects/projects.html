@@ -11,10 +11,7 @@
         darkMode: "class",
         theme: {
           extend: {
-            colors: {
-              chillDark: "#1c1c1c",
-              chillLight: "#e5e5e5",
-            },
+            colors: { chillDark: "#1c1c1c", chillLight: "#e5e5e5" },
           },
         },
       };
@@ -44,140 +41,101 @@
           tüm projeler & deneyler
         </h1>
         <p class="text-sm text-neutral-500 font-light">
-          Geliştirdiğim, optimize ettiğim ve üzerine kafa yorduğum tüm
-          çalışmaların kronolojik dökümü.
+          Dosyalardan otomatik okunan ve kronolojik olarak sıralanan projeler.
         </p>
         <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-full pt-4"></div>
       </header>
 
-      <div class="space-y-8">
-        <a
-          href="kfold-validation.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              K-Fold Çapraz Doğrulama Mimari Çalışması
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              Modellerin ezberlemesini (overfitting) engellemek için
-              geliştirilmiş güvenli test mimarisi.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            HAZİRAN 2026
-          </div>
-        </a>
-
-        <a
-          href="customer-segmentation.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              Müşteri Segmentasyonu Analizi
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              K-Means kümeleme algoritması kullanılarak kullanıcı
-              davranışlarının optimize edilmesi projesi.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            HAZİRAN 2026
-          </div>
-        </a>
-
-        <a
-          href="nash-equilibrium.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              Nash Dengesi Simülatörü
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              Çok oyunculu senaryolarda optimum stratejileri hesaplayan ve karar
-              mekanizmalarını görselleştiren simülasyon.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            HAZİRAN 2026
-          </div>
-        </a>
-
-        <a
-          href="password-gen.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              Rastgele Şifre Oluşturucu
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              Kriptografik güvenli kütüphanelerle kırılması imkansız parola
-              üretimi.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            MAYIS 2026
-          </div>
-        </a>
-
-        <a
-          href="tictactoe.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              Yapay Zekalı Tic-Tac-Toe
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              Matris yapıları ve temel oyun döngüsü mantığı üzerine X-O
-              çalışması.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            NİSAN 2026
-          </div>
-        </a>
-
-        <a
-          href="calculator.html"
-          class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all"
-        >
-          <div class="space-y-1">
-            <h4
-              class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-            >
-              Kapsamlı Hesap Makinesi
-            </h4>
-            <p class="text-sm text-neutral-500 font-light line-clamp-1">
-              Regex ayrıştırıcılar ve hata yakalama blokları içeren CLI aracı.
-            </p>
-          </div>
-          <div class="text-xs font-mono text-neutral-400 shrink-0">
-            MART 2026
-          </div>
-        </a>
+      <div id="projects-container" class="space-y-8">
+        <div id="loading-text" class="text-sm text-neutral-400 font-mono">
+          Projeler taranıyor...
+        </div>
       </div>
     </main>
 
     <footer
       class="max-w-2xl mx-auto px-4 py-8 text-center text-xs font-mono text-neutral-500 border-t border-neutral-300 dark:border-neutral-800 w-full"
     >
-      &copy; 2026 vatoz. Tüm hakları sablıdır.
+      &copy; 2026 vatoz. Tüm hakları saklıdır.
     </footer>
 
     <script src="../script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Sadece okumak istediğin proje dosyalarının isimlerini buraya ekle bro, gerisine dokunma:
+        const projeDosyalari = [
+          "calculator.html",
+          "tictactoe.html",
+          "password-gen.html",
+          "customer-segmentation.html",
+          "kfold-validation.html",
+          "nash-equilibrium.html",
+        ];
+
+        const container = document.getElementById("projects-container");
+        const loadingText = document.getElementById("loading-text");
+        let validProjects = [];
+
+        // Tüm dosyaları arka planda oku
+        for (const dosya of projeDosyalari) {
+          try {
+            const response = await fetch(dosya);
+            if (!response.ok) continue;
+
+            const text = await response.text();
+
+            // Sanal bir parser ile dosya içeriğindeki meta etiketlerini ayıkla
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, "text/html");
+
+            const title =
+              doc
+                .querySelector('meta[name="project-title"]')
+                ?.getAttribute("content") || dosya;
+            const date =
+              doc
+                .querySelector('meta[name="project-date"]')
+                ?.getAttribute("content") || "0000-00";
+            const dateText =
+              doc
+                .querySelector('meta[name="project-date-text"]')
+                ?.getAttribute("content") || "BİLİNMİYOR";
+            const desc =
+              doc
+                .querySelector('meta[name="project-desc"]')
+                ?.getAttribute("content") || "Açıklama girilmemiş.";
+
+            validProjects.push({ dosya, title, date, dateText, desc });
+          } catch (e) {
+            console.error(`${dosya} okunurken hata oluştu:`, e);
+          }
+        }
+
+        // Tarihe göre büyükten küçüğe sırala (En yeni en üstte)
+        validProjects.sort((a, b) => b.date.localeCompare(a.date));
+
+        // Yükleniyor yazısını kaldır
+        loadingText.remove();
+
+        // Sıralanan projeleri HTML olarak bas
+        validProjects.forEach((proj) => {
+          const html = `
+            <a href="${proj.dosya}" class="group flex items-baseline justify-between gap-4 border-b border-neutral-200 dark:border-neutral-900 pb-4 hover:opacity-70 transition-all">
+              <div class="space-y-1">
+                <h4 class="text-base font-medium tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  ${proj.title}
+                </h4>
+                <p class="text-sm text-neutral-500 font-light line-clamp-1">
+                  ${proj.desc}
+                </p>
+              </div>
+              <div class="text-xs font-mono text-neutral-400 shrink-0">${proj.dateText}</div>
+            </a>
+          `;
+          container.insertAdjacentHTML("beforeend", html);
+        });
+      });
+    </script>
   </body>
 </html>
