@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | vatoz</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { darkBg: '#0f172a', darkCard: '#1e293b' } } } }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-darkBg dark:text-slate-200 transition-colors duration-300 font-sans">
+
+    <div id="progress-container" class="fixed top-0 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 z-50">
+        <div id="progress-bar" class="h-full w-0 bg-gradient-to-r from-indigo-500 to-pink-500 transition-all duration-75"></div>
+    </div>
+
+    <nav class="sticky top-1 z-40 backdrop-blur-md bg-white/75 dark:bg-darkBg/75 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">&larr; Ana Sayfa</a>
+            <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800">
+                <span id="theme-toggle-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <article>
+            <header class="mb-8">
+                <span class="text-sm font-semibold text-indigo-500 uppercase">Veri Analitiği</span>
+                <h1 class="text-4xl font-extrabold my-3 text-slate-900 dark:text-white">Makine Öğrenmesinde Min-Max Normalizasyonu</h1>
+                <p class="text-slate-400 text-sm">Okuma Süresi: ~5 dk &bull; 17 Haziran 2026</p>
+            </header>
+
+            <div class="prose dark:prose-invert max-w-none space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Veri madenciliği ve makine öğrenmesi süreçlerinde karşılaştığımız en büyük problemlerden biri, veri setindeki özelliklerin (features) farklı ölçeklerde olmasıdır. Örneğin bir ev fiyatı tahmin modelinde evin oda sayısı (1-5 arası) ile evin fiyatı (milyonlarca lira) aynı model matrisine girdiğinde algoritmalar büyük sayılara daha fazla ağırlık verme eğilimindedir.</p>
+                
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8">Matematiksel Formül Neyi İfade Ediyor?</h2>
+                <p>Min-Max normalizasyonu, verideki tüm değerleri başarılı bir şekilde 0 ile 1 arasına (veya istenirse -1 ile 1 arasına) çeker. Formülü oldukça basittir:</p>
+                
+                <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl text-center font-mono text-indigo-600 dark:text-indigo-400 my-4">
+                    X_norm = (X - X_min) / (X_max - X_min)
+                </div>
+
+                <p>Bu işlem yapıldığında, verinin orijinal dağılımı korunur ancak varyans küçülür. Özellikle mesafe tabanlı algoritmalar olan K-Nearest Neighbors (KNN) veya Support Vector Machines (SVM) gibi modellerde bu işlem hayati önem taşır. Eğer normalizasyon yapılmazsa, büyük eksendeki mesafeler modeli tamamen domine edecektir.</p>
+
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-8">Hangi Durumlarda Tercih Edilmemeli?</h2>
+                <p>Eğer veri setinizde çok fazla uç değer (outlier) varsa, Min-Max normalizasyonu tehlikeli olabilir. Çünkü formül doğrudan maksimum ve minimum değerlere bağlıdır. Tek bir devasa uç değer, geri kalan tüm mantıklı verilerin çok dar bir aralığa sıkışmasına neden olur. Bu durumlarda Standart Sapma ve Ortalama kullanan <strong>StandardScaler</strong> yöntemini seçmek profesyonel bir yaklaşım olacaktır.</p>
+                
+                <p>Sonuç olarak, veri ön işleme aşaması bir modelin başarısını belirleyen en önemli adımdır. Çöp girerse çöp çıkar (Garbage in, garbage out) prensibiyle, verilerimizi modele vermeden önce ölçeklemek, kararlı ve doğru sonuçlar almamızı sağlar.</p>
+            </div>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
